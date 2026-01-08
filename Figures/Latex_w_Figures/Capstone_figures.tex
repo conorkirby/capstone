@@ -1,0 +1,212 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[margin=0.1cm]{geometry}
+% Define JSON language for listings
+\lstdefinelanguage{json}{
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=5pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{gray!10},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+    morestring=[b]",
+    morecomment=[l]{:},
+    moredelim=[s][\color{string}]{"}{"},
+}
+\definecolor{string}{rgb}{0.31,0.60,0.02}
+\definecolor{numb}{rgb}{0.80,0.47,0.13}
+\definecolor{punct}{rgb}{0.00,0.00,0.00}
+\definecolor{delim}{rgb}{0.58,0.63,0.69}
+
+\title{Figures for Capstone}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+\section{Plotting full dataset and comparing with Gaussian along the way}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/endpoints.png}
+    \caption{Figuring out how to label, start X, end but disappeared open O, and end but last timestep}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/fullbubblepath(disappearing).png}
+    \caption{Zoom in on a full bubble path which disappears before the final timestep}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/fullbubblepath(no_disappear).png}
+    \caption{Zoom in on a full bubble path which remains for the whole dataset}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/Gaussian_rand_walk.png}
+    \caption{Comparing directly to a Gaussian random walk, not as random, Gaussian seems sporadic where as there is some order behind the bubbles}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_paths_unfixed.png}
+    \caption{Data seems unreadable. Need to account for the jumps}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_paths_fixed.png}
+    \caption{The system works that if a bubble travels outside of the left side of the box, then it will appear at the right and if the centre passes over it suddely jumps the length of the of the box and the data seems incorrect. However I flagged where the "bad data" was and offset that either in the x or the y and managed to make the data usable.}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/Gaussian_400evenDistrib.png}
+    \caption{400 evenly distributed Gaussian random walks each over 726 time steps to work in parallel to the bubble sample }
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_290_position_changes.png}
+    \caption{Position changes in the x and y axis as a function of time with positive shift to avoid log(0). This is for bubble 290 which lasts till the end of the dataset.}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_290_log_returns.png}
+    \caption{Log returns in the x and y axis as a function of time with positive shift to avoid log(0). This is for bubble 290 which lasts till the end of the dataset.}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{cc}
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_displacement_dt_1.png} &
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_displacement_dt_5.png} \\
+        & \\
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_displacement_dt_10.png} &
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_displacement_dt_20.png} \\
+        & \\
+    \end{tabular}
+    \caption{A 2x2 grid of figures.}
+    \label{fig:2x2grid}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{cc}
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_displacement_dt_50.png} &
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_displacement_dt_100.png} \\
+        & \\
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_displacement_dt_200.png} &
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_displacement_dt_400.png} \\
+        & \\
+    \end{tabular}
+    \caption{Clearly there is no bias in any direction and the distributions are all very similar. Therefore we can combine the $\Delta x$ and $\Delta y$ data to get better statistics.}
+    \label{fig:2x2grid}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{cc}
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_displacement_histograms.png} &
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_displacement_histograms_log.png} \\
+        \small (a) Bubble displacement histograms & \small (b) Bubble displacement histograms (log y) \\
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/Gaussian726_Changes_in_Position.png} &
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/Gaussian726_Changes_in_Position_Log.png} \\
+        \small (c) Gaussian walk displacement histograms & \small (d) Gaussian walk displacement histograms (log y) \\
+    \end{tabular}
+    \caption{Comparison of histograms of displacements in x and y for bubbles and Gaussian random walks. Top: bubble data; bottom: Gaussian random walk. Left: linear scale; right: log scale on the y axis.}
+    \label{fig:displacement_histograms_4panel}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/Gaussian726_All_Changes_in_Position_combination.png}
+    \caption{We can see from the distributions that there is no x or y bias so we are able to combine the x and y data to get double the dataset.}
+\end{figure}
+
+
+
+
+\section{Mean Squared Displacement}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/GaussianMSD_onerun.png}
+    \caption{Clearly some linear increase however it is hard to see any relation from this. Worth doing it for more runs and averaging over the runs. For argument sake we can pick 400 to work in parallel with the bubble data}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/100vs400_MSD.png}
+    \caption{Mean Squared Displacement of Gaussian random walks over 726 time steps for both 100 and 400 realisations. Alongside the theoretical slope of 2, why?}
+    \label{fig:100vs400}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble(MSD)_count_over_time.png}
+    \caption{This is how the bubble count scales over time}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/bubble_MSD_scaled_with_fit.png}
+    \caption{Mean squared displacement of the bubble data, relation (if there is one) comes apart once bubbles start to disappear. Fitting the first 30\% of data gives us a roughly linear fit. However I dont think that it is enough to get any reasonable conclusion from the MSD data.}
+\end{figure}
+
+
+\section{Average Bubble Area}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/average_bubble_area_over_time.png}
+    \caption{Average bubble area over time, using data from the dataset given. Obviously as time goes on the average bubble area increases as smaller bubbles disappear and larger bubbles remain.}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/comparison_bubble_area_methods.png}
+    \caption{Comparison of bubble area calculation methods. The blue line represents the average bubble area calculated using the dataset's provided area values. The red line is the average bubble area calculated using the formula $\langle A \rangle = LW(1-\phi)/N$, where $L$ and $W$ are the dimensions of the box, $\phi$ is the area fraction, and $N$ is the number of bubbles at each timestep. Both methods show a similar trend of increasing average bubble area over time, indicating that as smaller bubbles disappear, the average size of the remaining bubbles increases. The close agreement between the two methods validates the accuracy of the dataset's area values and confirms the reliability of the formula used for calculation.}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{cc}
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/absolute_difference_bubble_area_methods.png} &
+        \includegraphics[width=0.45\textwidth]{/Users/conorkirby/projects/python/capstone/Figures/percent_error_bubble_area_methods.png} \\
+        \small (a) Absolute difference & \small (b) Percentage difference \\
+    \end{tabular}
+    \caption{Comparison of the two methods for calculating average bubble area: (a) absolute difference, (b) percentage difference between methods.}
+\end{figure}
+
+\end{document} 
