@@ -11,15 +11,15 @@ from pathlib import Path
 # CONFIGURATION
 # ============================================================================
 
-# DATA_FILE = Path("/Users/conorkirby/Library/Mobile Documents/com~apple~CloudDocs/Coding/projects/python/capstone/DataFiles/wetfoam2_bub_RH2_0.020000_0.507713.txt")
+DATA_FILE = Path("/Users/conorkirby/Library/Mobile Documents/com~apple~CloudDocs/Coding/projects/python/capstone/DataFiles/wetfoam2_bub_RH2_0.020000_0.507713.txt")
 # DATA_FILE = Path("/Users/conorkirby/Library/Mobile Documents/com~apple~CloudDocs/Coding/projects/python/capstone/DataFiles/wetfoam_bub_RH2_0.080000_0.507713.txt")
 # DATA_FILE = Path("/Users/conorkirby/Library/Mobile Documents/com~apple~CloudDocs/Coding/projects/python/capstone/DataFiles/wetfoam_bub_RH2_0.140000_0.502800.txt")
-DATA_FILE = Path("/Users/conorkirby/Library/Mobile Documents/com~apple~CloudDocs/Coding/projects/python/capstone/DataFiles/wetfoam3_bub_RH3_0.080000_0.501221.txt")
+# DATA_FILE = Path("/Users/conorkirby/Library/Mobile Documents/com~apple~CloudDocs/Coding/projects/python/capstone/DataFiles/wetfoam3_bub_RH3_0.080000_0.501221.txt")
 
-# BOX_SIZE = 20.203051
+BOX_SIZE = 20.203051
 # BOX_SIZE = 20.851441
 # BOX_SIZE = 20.0
-BOX_SIZE = 39.562828
+# BOX_SIZE = 39.562828
 
 half_box = BOX_SIZE / 2.0
 PERIODIC_THRESHOLD = 10.0
