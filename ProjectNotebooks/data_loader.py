@@ -41,6 +41,9 @@ df = pd.read_csv(
 )
 print(f"✓ Loaded {len(df)} observations")
 
+problem_rows = df[pd.to_numeric(df["x"], errors="coerce").isna()]
+print(problem_rows)
+
 # ============================================================================
 # ADD TIMESTEPS
 # ============================================================================

@@ -1,5 +1,5 @@
 
-rgb(148, 102, 102) bubbles
+#400 bubbles
 #width=20.203051, height=20.203051, time =1
 ###vcentrex= 10.039337, vcentrey= 10.434378, vcentreAx= 10.000768, vcentreAy= 10.350760, bcentrex= 10.584868, bcentrey= 10.863349, bcentreAx= 10.790131, bcentreAy= 10.862649
 #id,,x,y,area,pressure,Z
